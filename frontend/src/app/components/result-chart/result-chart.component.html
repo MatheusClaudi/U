@@ -1,0 +1,25 @@
+<section *ngIf="showReport" class=" container report">
+    <div class="title break-text">
+        <span class="comp-sub-hdr"> Resultados da votação • </span>
+    </div>
+
+    <div *ngIf="winners.length == 1" class="content break-text">
+        <h3 class="content">A carta mais votada foi {{winners[0]}}</h3>
+    </div>
+
+    <div *ngIf="winners.length > 1" class="content break-text">
+        <h3 class="content">Houve um empate entre as cartas {{winnersToString()}} </h3>
+    </div>
+
+    <div class="chart">
+    <canvas baseChart
+                [data]="doughnutChartData"
+                [labels]="doughnutChartLabels"
+                [chartType]="doughnutChartType"
+                [colors]="chartColors"
+                [legend]="false"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)">
+    </canvas>
+</div>
+</section>

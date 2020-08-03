@@ -1,0 +1,61 @@
+
+.container {
+  max-width: 100%;
+	margin: 0 auto;
+	display: flex;
+}
+
+.column {
+	flex-direction: column;
+}
+
+
+.item{
+  flex: 1;
+	margin: 5px;
+	text-align: left;
+}
+
+
+.text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 15px;
+  height: 27px;
+  color: #3D3D3D;
+  font-size: 18px;
+}
+
+.break-text{
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.acceptance{
+  max-width: 100%;
+  width: 100%;
+  background: #F9F9F9 0% 0% no-repeat padding-box;
+  border: 1px solid #E1E1E1;
+  border-radius: 4px;
+}
+
+.acceptance-text{
+  text-align: justify;
+  margin: 10px;
+  font: Medium 13px/18px Montserrat;
+  color: #384364;
+}

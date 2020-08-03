@@ -1,0 +1,19 @@
+<div class="page flex">
+    <div class="container flex">
+      <div class="title">
+        <h2>Ativação de conta:</h2>
+      </div>
+      <div class="form-group">
+
+        <div class="messages">
+            <small class="text-danger" *ngIf="!valid">*Token inválido </small>
+            <small class="text-danger" *ngIf="valid && accountActivate">*Sua conta foi ativada </small>
+            <small class="text-danger" *ngIf="valid && !accountActivate">*Ocorreu um erro na ativação da conta </small>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+ 
+  

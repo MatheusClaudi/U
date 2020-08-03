@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 15px 30px;
+  border-bottom: 1px solid #eaecef;
+  align-items: center;
+}
+
+.header h2 {
+  color: #0f218b;
+  font-weight: bold;
+  margin: 0;
+}
+
+menu {
+  margin: 0;
+}
+
+.logo {
+  display: flex;
+  height: 35px;
+  width: 130px;
+  background-image: url("../../../assets/img/logo_virtus2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}

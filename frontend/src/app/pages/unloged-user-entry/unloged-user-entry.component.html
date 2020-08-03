@@ -1,0 +1,18 @@
+<div class="container">
+  <span class="comp-sub-hdr"> Planning e Retrospective • </span>
+  <h4 class="comp-title">Acesso do Colaborador</h4>
+  <div class="planit-modal-body">
+    <form [formGroup]="devNameForm">
+      <div class="form-group">
+        <label for="storyNameInput" class="label">Nome</label>
+        <input type="text" class="input" id="storyNameInput" formControlName="devName">
+      </div>
+    </form>
+    <br>
+    <div class="comp-buttons">
+      <button id="btn-save-add" (click)="enterDev()">ENTRAR</button>
+    </div>
+  </div>
+
+</div>
+

@@ -1,0 +1,75 @@
+<div class="container">
+    <span class="comp-sub-hdr"> Sprint planning • </span>
+
+    <div>
+      <h4 class="comp-title">Editar Usuário</h4>
+    </div>
+  
+    <form [formGroup]="addUserForm" class="form-space" (submit)="register()" autocomplete="off" novalidate>
+      <div class="flex-container">
+        <div class="form-group">
+          <label for="name-user">Nome</label>
+          <input type="text" id="name-user" placeholder="Nome" formControlName="name" [class.is-invalid]="isFormFieldInvalid('name')" >
+          <div class="messages">
+            <small class="text-danger" *ngIf="hasError('name', 'required')">*Campo obrigatório</small>
+            <small class="text-danger" *ngIf="hasError('name', 'minlength')">*Tamanho deve ser no mínimo 2</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Sobrenome</label>
+          <input type="text" id="lastName" placeholder="Sobrenome" formControlName="lastName" [class.is-invalid]="isFormFieldInvalid('lastName')">
+          <div class="messages">
+            <small class="text-danger" *ngIf="hasError('lastName', 'required')">*Campo obrigatório</small>
+            <small class="text-danger" *ngIf="hasError('lastName', 'minlength')">*Tamanho deve ser no mínimo 2</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="text" id="email" placeholder="Email" formControlName="email" [class.is-invalid]="isFormFieldInvalid('email')">
+          <div class="messages">
+            <small class="text-danger" *ngIf="hasError('email', 'required')">*Campo obrigatório</small>
+            <small class="text-danger" *ngIf="hasError('email', 'pattern')">*Email inválido</small>
+            <small class="text-danger" *ngIf="hasError('email', 'emailTaken')">*Email já em uso</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="phone">Telefone (Opicional)</label>
+          <input type="text" id="phone" placeholder="Telefone" formControlName="phone" [class.is-invalid]="isFormFieldInvalid('phone')">
+          <div class="messages">
+            <small class="text-danger" *ngIf="hasError('phone', 'pattern')">*Deve conter apenas números</small>
+            <small class="text-danger" *ngIf="hasError('phone', 'minlength') && !hasError('phone', 'pattern')">*Tamanho deve ser no mínimo 11 dígitos</small>
+          </div>
+        </div>
+        <div class="form-group pass">
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" placeholder="Senha" formControlName="pass" [class.is-invalid]="isFormFieldInvalid('pass')">
+          <div class="messages">
+            <small class="text-danger" *ngIf="hasError('pass', 'required')">*Campo obrigatório</small>
+            <small class="text-danger" *ngIf="hasError('pass', 'minlength')">*Tamanho deve ser no mínimo 2</small>
+          </div>
+        </div>
+        <div class="form-group pass">
+          <label for="conf-senha">Confirmação da senha</label>
+          <input type="password" id="conf-senha" placeholder="Confirmação senha" formControlName="confirmPass" [class.is-invalid]="isFormFieldInvalid('confirmPass')">
+          <div class="messages">
+            <small class="text-danger" *ngIf="isPasswordDifferent() && (addUserForm.get('pass').value != '')">*A confirmação está diferente da senha</small>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div>
+      <label>Nível de acesso</label>
+    </div>
+    <div>
+      <span class="badge badge-pill badge-success" (click)="adminManagement()" *ngIf="admin">Admin</span>
+      <span class="badge badge-pill badge-secondary" (click)="adminManagement()" *ngIf="!admin">User</span>
+    </div>
+  </div>
+  
+  <div class="buttons">
+    <button type="submit" [disabled]="isPasswordDifferent() || !addUserForm.valid" (click)="editUser()" class="btn-add">
+      <div>EDITAR</div>
+    </button>
+    <button (click)="returnToUsers()" class="btn-cancel">CANCELAR</button>
+  </div>
+  

@@ -1,0 +1,87 @@
+<div class="poker-planning">
+    <div class="poker-container">
+        <div *ngIf="(!inVotation) && currentUs != undefined && roomId != undefined " class="result-votation" >
+            <app-result-chart [id]="roomId"></app-result-chart>
+        </div>
+        <div class="button-controller"  *ngIf="hiddenController">
+            <span class="open-icon m1" (click)="showOrCloseController()"></span>
+        </div>
+        <div class="header">
+            <app-story-description class="description" *ngIf="currentUsTemp != undefined"  [userStoryId]="currentUsTemp.id"></app-story-description>
+            <app-story-description class="description" *ngIf="currentUsTemp == undefined && currentUs != undefined"  [userStoryId]="currentUs.id"></app-story-description>
+        </div>
+            
+        <div *ngIf="sprintId != undefined">
+            <app-poker [inVotation]="inVotation" [sprintId]="sprintId"></app-poker>
+        </div>
+    </div>
+    <div [ngStyle]="myStyles" class="controller-container">
+        <div class="guideBox">
+            
+            <div class="guide-button">
+                <span class="close-icon rotate-90" (click)="showOrCloseController()"></span>
+            </div>
+            
+            <div class="guide-text">
+                <p *ngIf="!inVotation && !currentUs">Clique em INICIAR para começar a votação</p>
+                <p *ngIf="inVotation && currentUs">Em Votação</p>
+                <p *ngIf="!inVotation && currentUs">Votação finalizada</p>
+            </div>
+        </div>
+
+        <div class="margin-h-2 margin-v-1">
+            <div *ngIf="roomId">
+                <app-user-in-room-list [id]="roomId" [inVotation]="inVotation" [hasUserStory]="!!currentUs"></app-user-in-room-list>
+            </div>
+
+            <div *ngIf="!votationOpen">
+             
+                <div ngbDropdown class="dropdown dropdown-us d-inline-block">
+                    
+                    <button *ngIf="!currentUsTemp" class="btn btn-outline-primary area-limit" id="dropdownBasic1" ngbDropdownToggle>Escolha de us</button>
+                    <button *ngIf="currentUsTemp" [ngbPopover]="currentUsTemp.storyName"
+                    [openDelay]="300" [closeDelay]="500" triggers="mouseenter:mouseleave" class="btn btn-outline-primary area-limit" id="dropdownBasic1" ngbDropdownToggle>{{currentUsTemp.storyName}}</button>
+                    
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <button *ngFor="let us of userStory" [ngbPopover]="us.storyName" class="area-limit"
+                        [openDelay]="300" [closeDelay]="500" triggers="mouseenter:mouseleave" (click)="changeUserStory(us)" ngbDropdownItem>{{us.storyName}}</button>
+                    </div>
+                </div>
+               
+                <button class="circular-button blue font-b large-b" (click)="changeUSInVotation()" [disabled]="!currentUsTemp">INICIAR</button>
+            </div>
+
+            <div *ngIf="votationOpen">
+                
+                <div class="votationopen-buttons">
+                    <button  class="circular-button gray font-b tiny-b" *ngIf="inVotation" (click)="cleanVotes()">Limpar votos</button>
+                    <button  class="circular-button blue font-b tiny-b" *ngIf="inVotation" (click)="stopVotation()">Encerrar votação</button>    
+                </div>
+                
+                <div class="votationclosed-buttons">
+                    <div *ngIf="!inVotation">
+                        <div class="votationend-form">
+                            <div ngbDropdown class="dropdown dropdown-points d-inline-block">
+
+                                <button *ngIf="!pointsForUs" class="btn btn-outline-primary input-1" id="dropdownBasic1" ngbDropdownToggle>Pontuar</button>
+                                <button *ngIf="pointsForUs" class="btn btn-outline-primary  input-1" id="dropdownBasic1" ngbDropdownToggle>{{pointsForUs}}</button>
+                                
+                                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                    <button *ngFor="let voter of votersThatVoted" (click)="changePoints(voter.vote)" ngbDropdownItem>{{voter.vote}}</button>
+                                </div>
+                            </div>            
+                            <button class="form-button circular-button blue font-b tiny-b" (click)="endCurrentVotation()" [disabled]="!pointsForUs">Pontuar US</button>
+                        </div>
+                    </div>
+
+                    <button  class="circular-button gray font-b large-b" *ngIf="!inVotation" (click)="restartVotation()">Reiniciar votação </button>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="margin-h">
+            <app-share-room *ngIf="roomId != undefined" [id]="roomId"></app-share-room>
+        </div>
+    </div>
+</div>

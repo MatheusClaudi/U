@@ -1,0 +1,102 @@
+<section class="feedback">
+  <div class="header-feedback">
+    <div class="feedback-info">
+      <h4>DASHBOARD •</h4>
+      <h2>Feedbacks</h2>
+    </div>
+    <button (click)="redirectToCreateFeedBack()" class="btn-add">+ NOVO</button>
+  </div>
+
+  <div class="outer">
+    <table class="table">
+      <thead>
+        <tr class="us-list-conteiner">
+          <th class="alert-box" role="alert">Tipo</th>
+          <th class="alert-box" role="alert">Criação</th>
+          <th class="alert-box" role="alert">Periocidade</th>
+          <th class="alert-box" role="alert">Prazo</th>
+          <th class="alert-box" role="alert">Membros</th>
+          <th class="alert-box" role="alert">Status</th>
+        </tr>
+      </thead>
+      <tbody
+        *ngFor="
+          let feedback of feedbacks
+            | paginate: { itemsPerPage: 7, currentPage: currentPage };
+          let i = index
+        "
+      >
+        <tr
+          [ngStyle]="{ opacity: feedback.status === 'INATIVO' ? '0.5' : '1' }"
+        >
+          <td>
+            <div class="clearfix table-row">
+              <span>{{ feedback.type | titlecase }}</span>
+            </div>
+          </td>
+          <td>
+            <div class="clearfix table-row">
+              
+              <span>{{ feedback.creationDate }}</span>
+            </div>
+          </td>
+          <td>
+            <div class="clearfix table-row">
+              <span>{{ feedback.periodicity | titlecase }}</span>
+            </div>
+          </td>
+          <td>
+            <div class="clearfix table-row">
+              <span>{{ feedback.deadlineDate }}</span>
+            </div>
+          </td>
+          <td>
+            <div class="clearfix table-row">
+              <span
+                
+                >{{ feedback.usersFeedback.length }}</span
+              >
+            </div>
+          </td>
+          <td>
+            <div class="clearfix table-row">
+              <span>{{ feedback.status | titlecase }}</span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="btns">
+      <filter-feedback (selectedItem)="updateFeebackListByStatus($event)" (deselectedItem)="cleanFiltering($event)"></filter-feedback>
+      <div
+        *ngFor="
+          let feedback of feedbacks
+            | paginate: { itemsPerPage: 7, currentPage: currentPage };
+          let i = index
+        "
+      >
+        <div
+          class="icons"
+          [ngStyle]="{ opacity: feedback.status === 'INATIVO' ? '0.5' : '1' }"
+        >
+          <span (click)="redirectTo(feedback)" class="material-icons">
+            remove_red_eye
+          </span>
+          <span (click)="goToEdit(feedback)" class="material-icons">
+            edit
+          </span>
+          <span (click)="setStatus(feedback)" class="material-icons">
+            remove_circle
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pagination">
+    <pagination-controls
+      (pageChange)="currentPage = $event"
+      previousLabel=""
+      nextLabel=""
+    ></pagination-controls>
+  </div>
+</section>

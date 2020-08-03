@@ -1,0 +1,132 @@
+/*DashBoard header*/
+.dashboard {
+  padding: 35px 30px;
+}
+
+.header-dashboard {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.header-dashboard h4 {
+  opacity: 40%;
+  color: #384364;
+}
+
+.header-dashboard h2 {
+  opacity: 100%;
+  color: #384364;
+}
+
+/*Button create*/
+
+.createRetrospective {
+  border: none;
+  color: #fff;
+  background: #3277db;
+  border-radius: 100px;
+  width: 36px;
+  height: 36px;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+}
+
+/*List of boards*/
+
+.list-board {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.board {
+  width: calc(100% / 3);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.card-board {
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+  background: #f9f9f9 0% 0% no-repeat padding-box;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  opacity: 1;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  height: max-content;
+  cursor: pointer;
+}
+
+.info-board {
+  margin-left: 2px;
+}
+
+.info-board h3 {
+  font: Bold 16px Montserrat;
+  letter-spacing: 0px;
+  color: #384364;
+  opacity: 1;
+  word-break: break-all;
+}
+
+.info-board p {
+  font: 10px Montserrat;
+  letter-spacing: 0px;
+  color: #384364;
+  opacity: 1;
+  margin: 0 auto;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/*Icon buttons*/
+
+#delete {
+  color: #e54;
+  cursor: pointer;
+  opacity: 70%;
+  margin-left: 10px;
+}
+#delete:hover {
+  color: #e54;
+  opacity: 100%;
+}
+#update {
+  color: #384364;
+  opacity: 40%;
+  cursor: pointer;
+}
+#update:hover {
+  color: #384364;
+  opacity: 100%;
+}
+
+/*Responsive*/
+
+@media screen and (max-width: 700px) {
+  .board {
+    width: 100%;
+  }
+  .list-board {
+    flex-direction: column-reverse;
+  }
+}

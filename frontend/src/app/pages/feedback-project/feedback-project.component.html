@@ -1,0 +1,77 @@
+<section class="feedback">
+  <div class="header-feedback">
+    <div class="feedback-info">
+      <h2>Feedback {{ adjustString(feedback.type) }}</h2>
+      <h4>{{ adjustString(feedback.periodicity) }}</h4>
+    </div>
+    
+    <button (click)="redirectToFeedback()" class="btn-back">Voltar</button>
+  </div>
+
+  <div class="outer">
+    <table class="table">
+      <thead>
+        <tr class="us-list-conteiner">
+          <th class="alert-box" role="alert">Membros</th>
+          <th
+            *ngFor="let encontro of encontros; let i = index"
+            class="alert-box"
+            role="alert"
+          >
+            <p>{{ i + 1 }}º Encontro</p>
+            {{ encontro.ocurrencyDate }}
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        *ngFor="
+          let membro of membros
+            | paginate: { itemsPerPage: 4, currentPage: currentPage };
+          let i = index
+        "
+      >
+        <tr>
+          <td>
+            <div class="clearfix table-row">
+              <p>{{ membro.user.firstName + " " + membro.user.lastName }}</p>
+            </div>
+          </td>
+          <td *ngFor="let encontro of membro.individualFeedbacks; let i = index">
+            <div class="clearfix table-row">
+              <span>{{ adjustStatus(encontro.status) }}</span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="btns">
+      <div
+        *ngFor="
+          let membro of membros
+            | paginate: { itemsPerPage: 4, currentPage: currentPage };
+          let i = index
+        "
+      >
+        <div class="icons">
+          <span class="material-icons">
+            remove_red_eye
+          </span>
+          <span class="material-icons">
+            edit
+          </span>
+          <span class="material-icons">
+            remove_circle
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pagination">
+    <pagination-controls
+      (pageChange)="currentPage = $event"
+      previousLabel=""
+      nextLabel=""
+    ></pagination-controls>
+  </div>
+</section>

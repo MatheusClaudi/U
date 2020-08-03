@@ -1,0 +1,40 @@
+<div class="dev-container">
+    <div class="poker-container">
+        
+        <div *ngIf="status" class="status">  
+            <div class="box">
+                <div class= "box-text break-text">
+                    <div class="title break-text">
+                        <span class="comp-sub-hdr"> {{status}} </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div *ngIf="showResult" class="result">
+            <div class="message break-text">
+                <span>A UserStory {{currentUs.storyName}} foi pontuada em {{currentUs.points}} pontos</span>
+            </div>
+            
+            <div class="input">
+                <button (click)="resetRefresh()" class="circular-button break-text"> Continuar </button>
+            </div>
+        </div>
+        
+        <div *ngIf="(!inVotation) && currentUs != undefined && roomId != undefined " class="result-votation" >
+            <app-result-chart [id]="roomId"></app-result-chart>
+        </div> 
+
+        <div> 
+            <app-story-description *ngIf="currentUs != undefined"  [userStoryId]="currentUs.id"></app-story-description>
+        </div>
+            
+        <div *ngIf="sprintId != undefined">
+            <app-poker [inVotation]="inVotation" [sprintId]="sprintId"></app-poker>
+        </div>
+    </div>
+    
+</div>
+
+

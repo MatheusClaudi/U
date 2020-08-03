@@ -1,0 +1,288 @@
+<div class="conteiner">
+  <span class="comp-sub-hdr"> Feedback • </span>
+  <h4 class="comp-title">Novo feedback</h4>
+  <div class="form-group">
+    <div class="group">
+      <div class="column">
+        <form [formGroup]="feedbackForm">
+          <label class="top-label">Tipo:</label>
+          <div ngbDropdown>
+            <button
+              class="dropdown"
+              *ngIf="!getType()"
+              id="dropdownBasic1"
+              ngbDropdownToggle
+            >
+              Tipo do feedback
+            </button>
+            <button
+              class="dropdown"
+              *ngIf="getType()"
+              id="dropdownBasic1"
+              ngbDropdownToggle
+            >
+              {{ getType() }}
+            </button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem (click)="selectType('Constante')">
+                Constante
+              </button>
+              <button ngbDropdownItem (click)="selectType('Formal')">
+                Formal
+              </button>
+              <button ngbDropdownItem (click)="selectType('Expectativa')">
+                Expectativa
+              </button>
+            </div>
+          </div>
+          <div>
+            <small class="text-danger" *ngIf="hasErrorWithDropdownFeedback('type', 'required')" >*Campo obrigatório</small>
+          </div>
+
+
+          <label>Descrição:</label>
+          <textarea rows="3" formControlName="description"></textarea>
+          <div>
+            <small class="text-danger" *ngIf="hasErrorFeedbackField('description', 'whitespace')" >*Descrição composta por espaços em branco</small>
+          </div>
+          
+          <label>Membros:</label>
+          <app-user-select (usersHaveBeenChanged)="onUsersListChanges($event)"></app-user-select>
+        </form>
+      </div>
+
+      <div class="column">
+        <form [formGroup]="feedbackForm">
+          <label class="top-label">Duração:</label>
+          <div ngbDropdown>
+            <button
+              class="dropdown"
+              *ngIf="!this.getDuration()"
+              id="dropdownBasic1"
+              ngbDropdownToggle
+            >
+              Duração do projeto
+            </button>
+            <button
+              class="dropdown"
+              *ngIf="this.getDuration()"
+              id="dropdownBasic1"
+              ngbDropdownToggle
+            >
+              {{ this.getDuration() }}
+            </button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem (click)="selectDuration('6 meses')">
+                6 meses
+              </button>
+              <button ngbDropdownItem (click)="selectDuration('1 ano')">
+                1 ano
+              </button>
+              <button ngbDropdownItem (click)="selectDuration('Personalizada')">
+                Personalizada
+              </button>
+            </div>
+          </div>
+          <div>
+            <small *ngIf="hasErrorWithDropdownFeedback('selectedDuration', 'required')" class="text-danger" >*Campo obrigatório</small>
+          </div>
+          
+          <label>Prazo:</label>
+          <div class="dp-group">
+            <div class="dp-column">
+              <label class="dp-label">Início:</label>
+              <div class="dp-input-group">
+                <input
+                  class="date-picker"
+                  placeholder="dd/mm/aaaa"
+                  name="d1"
+                  ngbDatepicker
+                  #d1="ngbDatepicker"
+                  id="startDate"
+                  formControlName="startDate"
+                  value="{{ start }}"
+                />
+                <div class="input-group-append">
+                  <button
+                    class="btn-calendar"
+                    (click)="d1.toggle()"
+                    type="button"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="black"
+                      width="24px"
+                      height="24px"
+                    >
+                      <path d="M0 0h24v24H0z" fill="none" />
+                      <path
+                        d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0
+                      1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="dp-column">
+              <label class="dp-label">Fim:</label>
+              <div class="dp-input-group">
+                <input 
+                  class="date-picker"
+                  type="text"
+                  placeholder="dd/mm/aaaa"
+                  name="d2"
+                  ngbDatepicker
+                  #d2="ngbDatepicker"
+                  formControlName="endDate"
+                  value="{{ end }}"
+                  id="endDate"
+                />
+                <div class="input-group-append">
+                  <button
+                    class="btn-calendar"
+                    (click)="d2.toggle()"
+                    type="button"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="black"
+                      width="24px"
+                      height="24px"
+                    >
+                      <path d="M0 0h24v24H0z" fill="none" />
+                      <path
+                        d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9
+                      2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <span
+                  *ngIf="
+                  this.getDuration() && this.getDuration() != 'Personalizada'
+                  "
+                  class="refresh-icon"
+                  (click)="refreshDeadline()"
+                >
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </form>
+
+        <div>
+          <small class="text-danger" *ngIf="hasErrorFeedbackField('startDate', 'validDate')" >*Data de inicio inválida</small>
+          <small class="text-danger" *ngIf="hasErrorFeedbackField('endDate', 'validDate')">*Data para fim inválida</small>
+          <small class="text-danger" *ngIf="hasErrorFeedbackForm('validEndStart')" >*Data de inicio superior à data de término</small>
+        </div>
+
+
+        <div
+          *ngIf="getType() !== 'Formal' && getType() !== 'Expectativa'"
+        >
+          <label>Periodicidade de encontros:</label>
+          <div ngbDropdown>
+            <button
+              class="dropdown"
+              *ngIf="!getRate()"
+              id="dropdownBasic1"
+              ngbDropdownToggle
+            >
+              Periodicidade
+            </button>
+            <button
+              class="dropdown"
+              *ngIf="getRate()"
+              id="dropdownBasic1"
+              ngbDropdownToggle
+            >
+              {{ getRate() }}
+            </button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem (click)="selectRate('Mensal')">
+                Mensal
+              </button>
+              <button ngbDropdownItem (click)="selectRate('Bimestral')">
+                Bimestral
+              </button>
+              <button ngbDropdownItem (click)="selectRate('Trimestral')">
+                Trimestral
+              </button>
+              <button ngbDropdownItem (click)="selectRate('Semestral')">
+                Semestral
+              </button>
+            </div>
+          </div>
+        </div>
+        <div>
+          <small *ngIf="hasErrorFeedbackForm('validRate')" class="text-danger" >*Campo obrigatório</small>
+        </div>
+
+        <div class="mt-title">
+          <label class="meetings-label">Encontros:</label>
+          <div class="spacer"></div>
+          <button class="btn refresh-icon" (click)="refreshMeetings()"></button>
+        </div>
+        <form class="meetings-form" [formGroup]="feedbackForm">
+          <div
+            class="meetings-row"
+            formArrayName="meetings"
+            *ngFor="let meeting of getMeetingsControls(); let i = index"
+          >
+            <div class="meeting-group">
+              <label class="mt-label">{{ i + 1 }}º Encontro</label>
+              <div [formGroupName]="i">
+                <div class="dp-input-group">
+                  <input
+                    class="date-picker"
+                    placeholder="dd/mm/aaaa"
+                    name="d1"
+                    ngbDatepicker
+                    #d1="ngbDatepicker"
+                    [minDate]="minDateAllowed"
+                    formControlName="date"
+                    value="{{ meeting }}"
+                  />
+                  <div class="input-group-append">
+                    <button
+                      class="btn-calendar"
+                      (click)="d1.toggle()"
+                      type="button"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="black"
+                        width="24px"
+                        height="24px"
+                      >
+                        <path d="M0 0h24v24H0z" fill="none" />
+                        <path
+                          d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0
+                          1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <div>
+          <small class="text-danger" *ngIf="hasErrorFeedbackForm('validDatesMeetingList')" >*Possui data inválida</small>
+          <small class="text-danger" *ngIf="hasErrorFeedbackForm('validIntervalDatesMeetingListStartDate')" >*Possui data anterior a data de criação</small>
+          <small class="text-danger" *ngIf="hasErrorFeedbackForm('validIntervalDatesMeetingListEndDate')" >*Possui data superior a data de termino de feedback</small>
+          <small class="text-danger" *ngIf="hasErrorFeedbackForm('validIntervalDatesMeetingListToday')" >*Possui data anterior à hoje</small>
+        </div>
+
+        <button class="btn-save-feedback" (click)="submitForms()"[disabled]="!feedbackForm.valid">Criar</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<app-header></app-header>
+<div class="app-container">
+  <user-nav *ngIf="isLogged" class="user-nav"></user-nav>
+  <div [ngStyle]="{ 'width' : isLogged ? '83%' : '100%', 'max-width' : isLogged ? '83%' : '100%' }" class="component">
+    <router-outlet></router-outlet>
+  </div>
+</div>

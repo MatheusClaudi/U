@@ -1,0 +1,73 @@
+ng-multiselect-dropdown /deep/ div.multiselect-dropdown span.dropdown-btn {
+  text-align: center;
+  font: Bold 11px/31px Montserrat !important;
+  letter-spacing: 0px;
+  color: #384364 !important;
+  opacity: 1 !important;
+  
+  padding: 0.45rem 1.25rem !important;
+  border: 1px solid #e1e1e1 !important;
+  border-radius: 1px !important;
+  border-bottom: 1px solid #dee2e6 !important;
+  background: #f9f9f9 0% 0% no-repeat padding-box !important;
+  opacity: 1;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+ng-multiselect-dropdown
+  /deep/
+  div.multiselect-dropdown
+  span.dropdown-btn
+  span.selected-item {
+  float: none !important;
+  border: 1px solid #0bb4d4 !important;
+  background: #0bb4d4 0% 0% no-repeat padding-box !important;
+}
+
+ng-multiselect-dropdown
+  /deep/
+  .multiselect-item-checkbox
+  input[type="checkbox"]
+  + div::before {
+  border: 2px solid #0bb4d4 !important;
+}
+
+ng-multiselect-dropdown
+  /deep/
+  .multiselect-item-checkbox
+  input[type="checkbox"]:checked
+  + div::before {
+  background: #0bb4d4 !important;
+}
+
+ng-multiselect-dropdown
+  /deep/
+  .multiselect-item-checkbox
+  input[type="checkbox"]:disabled
+  + div::before {
+  border-color: #ccc !important;
+}
+
+@media screen and (max-width: 800px) {
+  ng-multiselect-dropdown /deep/ div.multiselect-dropdown span.dropdown-btn {
+    width: 11rem !important;
+  }
+  ng-multiselect-dropdown /deep/ div.multiselect-dropdown {
+    width: 11rem !important;
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  ng-multiselect-dropdown /deep/ div.multiselect-dropdown span.dropdown-btn {
+    width: 11rem !important;
+  }
+  ng-multiselect-dropdown /deep/ div.multiselect-dropdown {
+    width: 11rem !important;
+  }
+}

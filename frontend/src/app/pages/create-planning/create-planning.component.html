@@ -1,0 +1,19 @@
+
+<div class="container">
+  <h4 class="comp-title flex-item">Vamos começar</h4>
+
+  <form class="form-group flex-item flex" [formGroup]="planningForm" novalidate>
+    <label for="storyNameInput" class="label flex-item">Qual o nome da sprint e da release?</label>
+    <input type="text" placeholder="Sprint" class="input flex-item" [class.is-invalid]="isFormFieldInvalid('name')" formControlName="name">
+    <input type="text" placeholder="Release" class="input flex-item release" [class.is-invalid]="isFormFieldInvalid('release')" formControlName="release">
+
+    <div class="messages">
+      <small class="text-danger" *ngIf="hasError('name', 'required')">*Campos obrigatórios</small>
+    </div>
+  </form>
+  <br>
+  <div class="btns flex-item flex-row">
+    <button id="btn-save-add" class ="flex-item" (click)="onSubmit()" [disabled]="!planningForm.valid">CONTINUAR</button>
+    <button class="back-btn flex-item" (click)="goBack()">VOLTAR</button>
+  </div>
+</div>

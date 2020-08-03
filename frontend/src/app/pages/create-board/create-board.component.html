@@ -1,0 +1,62 @@
+<section class="create">
+  <div class="board-info">
+    <h4>SPRINT RETROSPECTIVE</h4>
+    <h2>Criar Retrospective</h2>
+  </div>
+  <div class="inputs">
+    <form [formGroup]="modalForm" novalidate>
+      <div class="form-group">
+        <div class="messages">
+          <small class="text-danger" *ngIf="hasError('name', 'required')"
+            >*Campo obrigatório</small
+          >
+          <small class="text-danger" *ngIf="hasError('name', 'minlength')"
+            >*Tamanho deve ser no mínimo 2</small
+          >
+        </div>
+        <input
+          placeholder="Digite um nome"
+          class="form-control"
+          formControlName="name"
+          type="text"
+        />
+      </div>
+      <div ngbDropdown class="dropdown dropdown-points d-inline-block">
+        <button
+          *ngIf="!sprintSelected"
+          class="btn input-1"
+          id="dropdownBasic1"
+          ngbDropdownToggle
+        >
+          Sprint
+        </button>
+        <button
+          *ngIf="sprintSelected"
+          class="btn input-1"
+          id="dropdownBasic1"
+          ngbDropdownToggle
+        >
+          {{ sprintSelected.name }}
+        </button>
+
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button
+            *ngFor="let sprint of sprintsFromUSer"
+            (click)="selectSprint(sprint)"
+            ngbDropdownItem
+          >
+            {{ sprint.name }} ({{ sprint.release }})
+          </button>
+          <button *ngIf="sprintsFromUSer.length == 0" ngbDropdownItem>
+            Vazio
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="menu-board">
+    <a class="btn-create" (click)="createBoard()"
+      ><span id="ok" class="material-icons-outlined"> add </span>Criar</a
+    >
+  </div>
+</section>

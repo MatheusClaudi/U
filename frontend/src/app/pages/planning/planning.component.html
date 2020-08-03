@@ -1,0 +1,31 @@
+<div class="sprints">
+    <div class="header-info">
+      <div class="retro-info">
+        <h4>SPRINT PLANNING</h4>
+        <h2>Sprint list:</h2>
+      </div>
+      <button (click)="createNewSprint()">+</button>
+    </div>
+    
+
+    <div class="list-sprint">
+      <div class="sprint" *ngFor="let sprint of sprintsFromUser; let i = index">
+        <div class="card-sprint" (click)="openVotation(sprint.id)" >
+          <div class="info-sprint">
+            <h3>{{ sprint.name }}</h3>
+            <p>{{ sprint.date }}</p>
+          </div>
+          <div class="btns">
+            <span
+              (click)="delete($event, i)"
+              id="delete"
+              class="material-icons"
+            >
+              highlight_off
+            </span>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+</div>

@@ -1,0 +1,272 @@
+
+.poker-planning{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.result-votation{
+    width: 100%;
+    max-width: 100%;
+}
+
+.poker-container{
+    margin-top: 40px;
+    width: 60%;
+    max-width: 60%;
+}
+
+
+.controller-container{
+    width: 37%;
+    max-width: 40%;
+    margin-top: 19px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #EAECEF;
+    border-radius: 8px;
+    opacity: 1;
+}
+
+.margin-h-2{
+    padding-left: 19px;
+    padding-right: 10px ;
+}
+
+.margin-h{
+    padding-left: 11px;
+    padding-right: 5px ;
+}
+
+.margin-v-1{
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+
+.guideBox{
+    
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background: #3277DB 0% 0% no-repeat padding-box;
+    border-radius: 8px 8px 0px 0px;
+    opacity: 1;
+}
+
+.guide-button{
+   
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.guide-text{
+    display: flex;
+    justify-content: left;
+    width: 85%;
+}
+
+.guide-text p{
+    padding-top: 9px;
+    padding-bottom: 9px;
+    font:  13px/18px Montserrat;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+.circular-button{
+
+    border-radius: 20px;
+    border: none;
+    opacity: 1;
+}
+
+.blue{
+    background: #3277DB 0% 0% no-repeat padding-box;
+}
+
+.gray{
+    background: #384364 0% 0% no-repeat padding-box;
+}
+
+.circular-button:disabled{
+    background: rgb(104, 150, 219) 0% 0% no-repeat padding-box;
+    border-radius: 20px;
+    border: none;
+    opacity: 1;
+}
+
+.large-b{
+    width: 100%;
+    height: 40px;
+}
+
+.tiny-b{
+    width: 40%;
+    height: 40px;
+}
+
+.font-b{
+    text-align: center;
+    font: 13px/15px Montserrat;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+.dropdown{
+    background: #F5F4FC 0% 0% no-repeat padding-box;
+    border-radius: 2px;
+    opacity: 1;
+    border: none;
+    margin-bottom: 20px;
+}
+
+.dropdown-us{
+    max-width: 60%;
+}
+
+.dropdown-us .area-limit{
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dropdown-menu.show{
+    max-width: 100%;
+    
+}
+
+.d-inline-block{
+    background: #F5F4FC 0% 0% no-repeat padding-box;
+}
+
+.votationopen-buttons{
+    padding-top:  20px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.votationclosed-buttons{
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.votationend-form{
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    max-width: 100%;
+    height: 40px;
+    margin-bottom: 28px;
+}
+
+
+.form-button{
+    max-width: 40%;
+    height: 35px;
+}
+
+.dropdown-points{
+    width: 40%;
+    background: none;
+}
+
+
+.input-1{
+    
+    width: 100%;
+    background: #F5F4FC 0% 0% no-repeat padding-box;
+    height: 35px;
+    text-align: left;
+    font: 13px/15px Montserrat;
+    letter-spacing: 0px;
+    color: #384364;
+    opacity: 1;
+    border: none;
+}
+
+.dropdown-toggle::after {
+    margin-top: 8px;
+    float: right;
+}
+
+.button-controller {
+    width: 100%;
+}
+
+.description {
+    width: 100%;
+}
+
+.header{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.mini-b{
+    width: 50px;
+    height: 40px;
+    margin-top: 20%;
+}
+
+
+.open-icon {
+    margin-right: 5%;
+    position: relative;
+    float: right;
+    height: 30px;
+    width: 25px;
+    background-image: url("../../../assets/img/list-dropdown.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.close-icon{
+    display: flex;
+    height: 30px;
+    width: 25px;
+    background-image: url("../../../assets/img/list-dropdown-write.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transform: rotate(90deg);
+    opacity: 1;
+}
+  
+.m1{
+    margin-top: 10px;
+}
+
+
+@media screen and (max-width: 550px){
+    .poker-container {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .poker-planning {
+        flex-direction: column;
+        justify-content: start;
+    }
+
+    .controller-container {
+        margin-left: 10%;
+        margin-top: 60px;
+        max-width: 100%;
+        width: 80%;
+        z-index: 10;
+        position: absolute;
+    }
+}

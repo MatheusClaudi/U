@@ -1,0 +1,67 @@
+<section class="labels">
+  <div class="header-label">
+    <h4>Labels</h4>
+    <h2>Criar tags</h2>
+  </div>
+  <div (clickOutside)="closeMenu()" class="menu-tag">
+    <a class="btn-open" (click)="this.menu = !this.menu"
+      ><span id="new-tag" class="material-icons-outlined"> turned_in_not </span
+      >Nova tag</a
+    >
+    <div class="input-tag" [ngStyle]="{ display: menu ? 'flex' : 'none' }">
+      <div class="tag-form">
+        <form [formGroup]="myForm" novalidate>
+          <div class="form-group">
+            <input
+              placeholder="Digite um nome"
+              class="form-control"
+              formControlName="text"
+              type="text"
+            />
+          </div>
+        </form>
+        <a (click)="createTag(); closeMenu()" class="btn-ok">
+          <span class="material-icons">
+            check_circle
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="list-tags">
+    <div class="tag" *ngFor="let tag of tags">
+      <div class="card-tag">
+        <div class="info-tag">
+          <h3 *ngIf="tag.id !== tagOnEditId">{{ tag.text }}</h3>
+
+          <textarea
+            *ngIf="tag.id === tagOnEditId"
+            [value]="tag.text"
+            type="text"
+            (keydown)="updateTag(tag.id, $event)"
+            class="updateTag"
+          >
+          </textarea>
+        </div>
+        <div class="btns-tag">
+          <span
+            ngbTooltip="Editar Tag"
+            id="update"
+            (click)="enableEdit(tag.id, $event)"
+            class="material-icons"
+          >
+            create
+          </span>
+          <span
+            ngbTooltip="Deletar Tag"
+            (click)="deleteTag(tag.id)"
+            id="delete"
+            class="material-icons"
+          >
+            delete
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

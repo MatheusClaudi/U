@@ -1,0 +1,81 @@
+<div class="row">
+  <div class="col">
+    <div *ngIf="loged" class="full-size">
+      <button
+        ngbDropdownItem
+        class="btn-menu"
+        *ngIf="hasAction"
+        (click)="handleAction()"
+      >
+        {{ currentLabel }}
+      </button>
+    </div>
+
+    <div class="mobile" ngbDropdown>
+      <button data-menu="button" ngbDropdownToggle>
+        Menu
+      </button>
+      <div id="menu" ngbDropdownMenu>
+        <div class="user-nav">
+          <button
+            ngbDropdownItem
+            class="btn-menu"
+            *ngIf="loged"
+            (click)="goToProfile()"
+          >
+            Perfil
+          </button>
+          <button
+            ngbDropdownItem
+            class="btn-menu"
+            *ngIf="loged && isAdmin"
+            (click)="goToUsers()"
+          >
+            Usuários
+          </button>
+          <button
+            *ngIf="loged && isClient"
+            ngbDropdownItem
+            class="btn-menu"
+            (click)="goToFeedback()"
+          >
+            Feedback
+          </button>
+          <button
+            *ngIf="loged && isClient"
+            ngbDropdownItem
+            class="btn-menu"
+            (click)="goToPlanning()"
+          >
+            Planning
+          </button>
+          <button
+            *ngIf="loged && isClient"
+            ngbDropdownItem
+            class="btn-menu"
+            (click)="goToLabels()"
+          >
+            Labels
+          </button>
+          <button
+            *ngIf="loged && isClient"
+            ngbDropdownItem
+            class="btn-menu"
+            (click)="goToDashBoard()"
+          >
+            Retrospective
+          </button>
+        </div>
+
+        <button
+          ngbDropdownItem
+          class="btn-menu"
+          *ngIf="hasAction"
+          (click)="handleAction()"
+        >
+          {{ currentLabel }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

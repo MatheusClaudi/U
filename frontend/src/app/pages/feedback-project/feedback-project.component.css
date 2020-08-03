@@ -1,0 +1,171 @@
+.feedback {
+  padding: 35px 30px;
+
+}
+
+.header-feedback {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.header-feedback h4 {
+  opacity: 40%;
+  color: #384364;
+  font-size: 14px;
+}
+
+.header-feedback h2 {
+  opacity: 100%;
+  color: #384364;
+}
+
+.btn-back {
+  width: 160px;
+  height: 46px;
+  text-align: center;
+  font: Bold 11px/11px Montserrat;
+  letter-spacing: 0.28px;
+  color: #ffffff;
+  text-transform: uppercase;
+  opacity: 1;
+  background: #0bb4d4 0% 0% no-repeat padding-box;
+  border-radius: 100px;
+  opacity: 1;
+  border: transparent;
+  transition: all 0.3s;
+}
+.btn-back:hover {
+  transform: scale(1.1);
+}
+
+.outer {
+  overflow-x: auto;
+  display: flex;
+}
+.table {
+}
+
+.us-list-conteiner {
+  margin-top: 34px;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+}
+
+th {
+  padding: 0px;
+  border: 0px;
+}
+
+.table thead th {
+  border-bottom: 0px;
+  vertical-align: inherit;
+}
+
+.alert-box {
+  text-align: center;
+  font: Bold 11px/31px Montserrat;
+  letter-spacing: 0px;
+  color: #384364;
+  opacity: 1;
+
+  padding: 0.01rem 1.25rem;
+  background: #f9f9f9 0% 0% no-repeat padding-box;
+  opacity: 1;
+  border-right: 1px solid #dee2e6;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+td {
+  text-align: center;
+}
+
+.table-row {
+  width: auto;
+  padding: 0px 8px;
+}
+
+.btns {
+  width: 20%;
+  margin-top: 65px;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 0.75rem;
+  margin-bottom: 1.62rem;
+}
+
+.icons span {
+  margin-left: 3px;
+  margin-right: 3px;
+  cursor: pointer;
+  color: #384364;
+  opacity: 70%;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.icons span:nth-child(1):hover {
+  color: #384364;
+  opacity: 100%;
+}
+
+.icons span:nth-child(2):hover {
+  color: #0bb4d4;
+  opacity: 100%;
+}
+
+.icons span:nth-child(3):hover {
+  color: #e54;
+  opacity: 100%;
+}
+
+.pagination {
+  position: absolute;
+  top: 82%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+pagination-controls /deep/ .ngx-pagination {
+  display: flex !important;
+  margin: 0;
+  padding: 0;
+}
+
+pagination-controls /deep/ .ngx-pagination .current {
+  background: #0bb4d4 !important;
+}
+
+@media screen and (min-width: 1920px) {
+  .pagination {
+    top: 56%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+
+  .pagination {
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+}

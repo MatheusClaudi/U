@@ -1,0 +1,14 @@
+<div class="share"> 
+    <p class="margin" >Convidar Desenvolvedor (a)</p>
+    <div class="url-box">
+        <p>{{baseShareUrl}}{{id}}</p>
+    </div>
+    <div class="center">
+        <ngx-qrcode 
+            value="{{baseShareUrl}}{{id}}"
+            cssClass="aclass"
+            errorCorrectionLevel="L"
+          >
+          </ngx-qrcode>
+    </div>
+</div>

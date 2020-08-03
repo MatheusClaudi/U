@@ -1,0 +1,54 @@
+
+<div class="users-box">
+    <div class="search-box">
+      <div ngbDropdown placement="bottom-left">
+        <div class="config-icon" id="dropdownBasic1" ngbDropdownToggle></div>
+ 
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button (click)="showHideSelected()" *ngIf="!showSelected" ngbDropdownItem >
+            Exibir selecionados
+          </button>
+          <button (click)="showHideSelected()" *ngIf="showSelected" ngbDropdownItem >
+            Esconder selecionados
+          </button>
+          <button (click)="selectAll()" ngbDropdownItem>
+            Selecionar todos
+          </button>
+          <button (click)="unselectAll()" ngbDropdownItem >
+            Deselecionar todos
+          </button>
+        </div>
+      </div>  
+      <input
+        [(ngModel)]="keywords"
+        class="search-input"
+        type="text"
+        placeholder="Buscar usuários"
+        id="search"
+        />
+        <div (click)="do()" class="search-icon"></div>
+        
+    </div>
+    <div class="users-list">
+        <form [formGroup]="form">
+            
+            <div>
+                <div class="form-check c2" *ngFor="let usr of mapUsers| keyvalue; let i = index">
+                    <label>
+                        <input class="check-box" type="checkbox" checked="checked" [value]="usr.value.id" (change)="onCheckboxChange($event, usr.value)" />
+                        {{ usr.value.firstName }} {{ usr.value.lastName }}
+                    </label>
+                </div>
+            </div>
+            
+            <div class="form-check" *ngFor="let usr of Users; let i = index">
+            <label *ngIf="usr.firstName != 'admin'">
+                <input *ngIf="checkCheckedValid(usr)" checked="checked" class="check-box" type="checkbox" [value]="usr.id" (change)="onCheckboxChange($event, usr)" />
+                <input *ngIf="!checkCheckedValid(usr)" class="check-box" type="checkbox" [value]="usr.id" (change)="onCheckboxChange($event, usr)" />
+                {{ usr.firstName }} {{ usr.lastName }}
+            </label>
+            </div>
+        </form>
+    </div>
+
+</div>

@@ -1,0 +1,198 @@
+.a {
+  display: none;
+}
+
+.introducao {
+  background: url("../../../assets/img/virtus.jpg") no-repeat center;
+  background-size: cover;
+  height: 380px;
+}
+
+.texto {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.botao {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 190px;
+}
+
+.texto h1 {
+  font-size: 42px;
+  font-family: "Montserrat";
+  letter-spacing: 0.1rem;
+  text-align: center;
+  line-height: 1;
+  color: white;
+}
+
+.titulo {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.cards {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.card {
+  max-width: 320px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.imagem {
+  display: flex;
+  justify-content: center;
+  height: 250px;
+  background: #161825;
+}
+
+.subtitulo {
+  text-align: center;
+  background-color: #faeee1;
+}
+
+.subtitulo h3 {
+  margin-top: 15px;
+  font-family: "Montserrat";
+}
+
+.subtitulo p {
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: "Montserrat";
+}
+
+.scrum {
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.texto-scrum {
+  display: flex;
+  align-items: center;
+  font-family: "Montserrat";
+}
+
+.icone-scrum {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.titulo-turmalina {
+  margin: 0 auto;
+}
+
+.titulo-turmalina h2 {
+  margin-left: 12px;
+  padding-top: 20px;
+  font-family: "Montserrat";
+}
+
+.turma {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.turmalina {
+  background-color: #faeee1;
+}
+
+.acesso {
+  text-align: center;
+}
+
+.footer {
+  background-color: #161825;
+  padding-top: 20px;
+}
+.virtus {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.virtus p {
+  color: white;
+}
+
+.sobre h2 {
+  font-family: "Montserrat";
+}
+
+.destaques h2 {
+  font-family: "Montserrat";
+}
+
+.descricao p {
+  font-family: "Montserrat";
+}
+
+#dev {
+  padding: 10px;
+  background: #79bbaa;
+  color: white;
+  border: 0;
+  width: 130px;
+}
+
+#dev:hover {
+  background: #79abbb;
+}
+
+#acesso-turmalina {
+  padding: 10px;
+  background: #c03723;
+  color: white;
+  border: 0;
+  width: 150px;
+}
+
+#acesso-turmalina:hover {
+  background: #c03032;
+}
+
+.titulo h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #c03723;
+  margin: 10px auto 10px auto;
+}
+
+.subtitulo h3::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #484b4d;
+  margin: 10px auto 10px auto;
+}
+
+.titulo-turmalina h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #c03723;
+  margin-left: 4px;
+}

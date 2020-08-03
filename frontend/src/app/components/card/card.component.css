@@ -1,0 +1,90 @@
+.card {
+  text-align: center;
+  padding: 5px;
+  color: #fff;
+  width: 100%;
+  height: 60px;
+  margin-bottom: 15px;
+  font-weight: 500;
+  position: relative;
+  display: table;
+}
+
+p {
+  max-width: 100px;
+  min-width: 100% !important;
+  padding: 12px;
+}
+
+input {
+  padding: 12px;
+}
+
+.card span {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.menu {
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: -27px;
+  right: 18px;
+}
+
+.card input {
+  text-align: center;
+  width: 100%;
+  background-color: transparent;
+  color: #fff;
+  outline: none;
+  border: none;
+}
+
+.menu button {
+  border: none;
+  width: 60px;
+  height: 30px;
+  background-color: #f9f9f9;
+  font-size: 12px;
+  border: 1px solid #f5f4fc;
+  transition: 0.2s ease;
+}
+
+tag-menu {
+  word-break: break-all;
+}
+
+.menu button:hover {
+  background-color: #3277db;
+  color: #fff;
+}
+
+@media screen and (max-width: 1000px) {
+  .card {
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .card {
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .menu {
+    top: -27px;
+    right: 20px;
+  }
+}

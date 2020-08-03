@@ -1,0 +1,53 @@
+<div class="user-nav flex">
+  <div class="user-info flex">
+    <img
+      src="https://i0.wp.com/ipc.digital/wp-content/uploads/2016/07/icon-user-default.png?fit=462%2C462&ssl=1"
+      alt=""
+    />
+    <p class="user-name">
+      {{ currentUser.firstName + " " + currentUser.lastName }}
+    </p>
+    <p class="user-email">{{ currentUser.email }}</p>
+  </div>
+  <div class="navigation">
+    <ul>
+      <li *ngIf="isClient">
+        <a routerLink="/user-account" routerLinkActive="active"
+          ><span class="material-icons-outlined">account_circle</span>Perfil</a
+        >
+      </li>
+
+      <li *ngIf="isAdmin">
+        <a routerLink="/users" routerLinkActive="active"
+          ><span class="material-icons-outlined">account_circle</span
+          >Usuários</a
+        >
+      </li>
+
+      <li *ngIf="isClient">
+        <a routerLink="/feedback" routerLinkActive="active"
+          ><span class="material-icons-outlined">thumbs_up_down</span
+          >Feedbacks</a
+        >
+      </li>
+
+      <li *ngIf="isClient">
+        <a routerLink="/planningHome" routerLinkActive="active"
+          ><span class="material-icons-outlined">settings</span>Sprint
+          Planning</a
+        >
+      </li>
+      <li *ngIf="isClient">
+        <a routerLink="/labels" routerLinkActive="active"
+          ><span class="material-icons-outlined"> bookmarks </span>Labels</a
+        >
+      </li>
+      <li *ngIf="isClient">
+        <a routerLink="/dashboard" routerLinkActive="active"
+          ><span class="material-icons-outlined">settings</span>Sprint
+          Retrospective</a
+        >
+      </li>
+    </ul>
+  </div>
+</div>

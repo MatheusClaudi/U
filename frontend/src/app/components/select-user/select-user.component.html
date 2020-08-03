@@ -1,0 +1,8 @@
+<ng-multiselect-dropdown
+  [(ngModel)]="selected"
+  [placeholder]="'Selecione os devs'"
+  [settings]="dropdownSettings"
+  [data]="users"
+  (onSelect)="getUser($event)"
+>
+</ng-multiselect-dropdown>

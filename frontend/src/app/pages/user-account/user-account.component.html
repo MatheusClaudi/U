@@ -1,0 +1,56 @@
+<div class="flex-column">
+    <form [formGroup]="userForm" class="container">
+      <div class="uk-margin center">
+        <div class="personal-image">
+            <label class="label">
+                <input type="file" (change)="onFileChange($event)"/>
+                <figure class="personal-figure">
+                  <img [src]="fileUrl ? fileUrl : '../../../assets/img/profile-placeholder1.png'"
+                        class="personal-avatar" alt="avatar">
+                    
+                </figure>
+            </label>
+        </div>
+      </div>
+      <div class="flex-column">
+        <div class="form-group">
+          <label for="firstNameInput" class="label">Primeiro nome</label>
+          <input type="text" class="input" id="firstNameInput" formControlName="firstName">
+
+          <div class="messages">
+            <small class="text-danger" *ngIf="hasError('firstName', 'required')">*Campo obrigatório</small>
+            <small class="text-danger" *ngIf="hasError('firstName', 'minlength')">*Tamanho deve ser no mínimo 2</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="lastNameInput" class="label">Último nome</label>
+          <input type="text" class="input" id="lastNameInput" formControlName="lastName">
+
+          <div class="messages">
+            <small class="text-danger" *ngIf="hasError('lastName', 'required')">*Campo obrigatório</small>
+            <small class="text-danger" *ngIf="hasError('lastName', 'minlength')">*Tamanho deve ser no mínimo 2</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="emailInput" class="label">Email</label>
+          <input type="text" class="input" id="emailInput" formControlName="email">
+
+          <div class="messages">
+            <small class="text-danger" *ngIf="hasError('email', 'required')">*Campo obrigatório</small>
+            <small class="text-danger" *ngIf="hasError('email', 'pattern')">*Email inválido</small>
+            <small class="text-danger" *ngIf="hasError('email', 'emailTaken')">*Email já em uso</small>
+          </div>
+        </div>
+       <!-- <div class="form-group">
+          <label for="passwordInput" class="label">Senha</label>
+          <input type="text" class="input" id="passwordInput" formControlName="password">
+        </div> -->
+      </div>
+    </form>
+  
+    <div class="comp-buttons">
+      <button id="btn-save-add" (click)="updateUser()">SALVAR ALTERAÇÕES</button>
+      <button id="btn-save-close" (click)="deleteUser()">DELETAR CONTA</button>
+    </div>
+  </div>
+  

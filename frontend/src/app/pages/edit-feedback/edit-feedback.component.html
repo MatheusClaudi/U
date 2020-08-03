@@ -1,0 +1,58 @@
+<div class="conteiner">
+    <span class="comp-sub-hdr"> Feedback • </span>
+    <h4 class="comp-title">Edição de feedback</h4>
+    
+    
+    <div class="group">
+        
+        
+        <div class="column">
+
+            <form [formGroup]="feedbackForm">
+            
+                <label>Prazo:</label>
+                <div class="dp-group">
+                <div class="dp-column">
+                    <label class="dp-label">Início:</label>
+                    <div class="dp-input-group">
+                    <input class="date-picker" formControlName="startDate" placeholder="{{startDate}}" id="startDate" readonly>
+                    </div>
+                </div>
+        
+                <div class="dp-column">
+                    <label class="dp-label">Fim:</label>
+                    <div class="dp-input-group">
+                    <input class="date-picker" type="text" placeholder="{{originalEndDate}}" name="d2" ngbDatepicker #d2="ngbDatepicker" formControlName="endDate" id="endDate"/>
+                    <div class="input-group-append">
+                        <button class="btn-calendar" (click)="d2.toggle()" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="24px" height="24px">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/>
+                        </svg>
+                        </button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                
+            </form>
+            <small class="text-danger" *ngIf="hasErrorFeedbackField('endDate', 'validDate')">*Data para fim inválida</small>
+            <small class="text-danger" *ngIf="hasErrorFeedbackForm('validEndStart')" >*Data de inicio superior à data de término</small>
+            <small class="text-danger" *ngIf="c1()" >*Data de término inferior à antiga</small>
+
+            <div class="confirm">
+                <button class="btn-save-feedback" (click)="onSubmitChanges()" [disabled]="!feedbackForm.valid || c1()">Salvar</button>
+            </div>
+            
+        </div>
+       
+
+
+        <div class="column">
+            <label>Membros:</label>
+            <app-user-select *ngIf="originalUserList" [startSelectUsers]="originalUserList" (usersHaveBeenChanged)="onUsersListChanges($event)"></app-user-select>
+        </div>    
+
+    </div>
+    
+</div>

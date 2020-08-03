@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col">
+    <div ngbDropdown>
+      <button data-menu="button" ngbDropdownToggle>
+        COMPARTILHAR
+      </button>
+      <div id="qr-code" ngbDropdownMenu>
+        <div class="qrcode" ngbDropdownItem>
+          <ngx-qrcode
+            [title]="title"
+            [elementType]="elementType"
+            value="http://localhost:4200/retrospective/{{ boardID }}"
+            cssClass="aclass"
+            errorCorrectionLevel="L"
+          >
+          </ngx-qrcode>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

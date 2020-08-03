@@ -1,0 +1,46 @@
+[data-menu="button"] {
+  border: none;
+  color: #fff;
+  background: #3277db;
+  border-radius: 20px;
+  width: 170px;
+  height: 40px;
+  font-size: 14px;
+  outline: none;
+}
+
+@keyframes qr-down {
+  to {
+    opacity: 1;
+    transform: translate3d(0, 50px, 0px);
+  }
+}
+
+#qr-code {
+  width: 160px;
+  background: white;
+  z-index: 200;
+  padding: 5px;
+  box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.3);
+  animation: qr-down 0.3s forwards;
+}
+
+.qrcode {
+  width: 150px;
+  display: flex;
+  justify-content: center;
+}
+
+.dropdown-toggle {
+  margin: 0;
+}
+
+.dropdown-toggle::after {
+  content: none;
+}
+
+.dropdown-menu {
+  border: 0;
+  border-radius: 0;
+  left: none;
+}

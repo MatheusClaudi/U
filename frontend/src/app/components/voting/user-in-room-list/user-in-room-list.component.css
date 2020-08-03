@@ -1,0 +1,87 @@
+
+.list-players-bar{
+    display: flex;
+    flex-direction: row;
+    margin-right: 3%;
+    margin-bottom: 4%;
+}
+
+.list-players-bar .text{
+    text-align: left;
+    font: 12px/15px Montserrat;
+    letter-spacing: 0px;
+    color: #3D3D3D;
+    opacity: 1;
+}
+
+.list-players-bar .time{
+
+    margin-left: auto;
+    font: 14px/18px Montserrat;
+    letter-spacing: 0px;
+    color: #3277DB;
+    opacity: 1;  
+}
+
+
+.player-icon{
+    top: 184px;
+    left: 943px;
+    width: 28px;
+    height: 28px;
+
+    margin-right: 3%;
+    border-radius: 50%;
+    background-image:    url(https://i0.wp.com/ipc.digital/wp-content/uploads/2016/07/icon-user-default.png?fit=462%2C462&ssl=1);
+    background-size:     cover;                      
+    background-repeat:   no-repeat;
+    background-position: center center; 
+    opacity: 1;
+}
+
+.voter-info{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    margin-right: 3%;
+}
+
+.voter-info .info{
+    line-height: 0.8;
+}
+
+.voter-info .info .name{
+    text-align: left;
+    font: 12px/15px Montserrat;
+    letter-spacing: 0px;
+    color: #3D3D3D;
+    opacity: 1;
+}
+
+.voter-info .info .time{
+    margin-top: 0px;
+    text-align: left;
+    font: 10px/13px Montserrat;
+    letter-spacing: 0px;
+    color: #3D3D3D;
+    opacity: 1;
+}
+
+.voter-info .vote{
+    margin-left: auto;
+    font: 18px/22px Montserrat;
+    letter-spacing: 0px;
+    color: #3277DB;
+    opacity: 1;
+}
+
+.confirm-icon {
+    margin-top: 3px;
+    margin-left: auto;
+    height: 30px;
+    width: 25px;
+    background-image: url("../../../../assets/img/check-circle.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+}

@@ -1,0 +1,47 @@
+.share {
+    text-align: left;
+    font: 12px/15px Montserrat;
+    letter-spacing: 0px;
+    color: #3D3D3D;
+    opacity: 1;
+}
+
+.margin{
+   padding-left:5.1%;
+}
+
+.url-box{
+    overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+    background: #F5F4FC 0% 0% no-repeat padding-box;
+    border-radius: 2px;
+    opacity: 1;
+}
+
+.url-box p{
+    padding-top: 9px;
+    padding-bottom: 8px;
+    padding-left: 10%;
+    padding-right: 5%;
+    text-align: left;
+    font: 12px/15px Montserrat;
+    letter-spacing: 0px;
+    color: #3D3D3D;
+    opacity: 1;
+}
+
+.center {
+    text-align: center;
+}

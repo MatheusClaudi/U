@@ -1,0 +1,29 @@
+<section class="dashboard">
+  <div class="header-dashboard">
+    <div class="dashboard-info">
+      <h4>SPRINT RETROSPECTIVE</h4>
+      <h2>Dashboard</h2>
+    </div>
+    <button class="createRetrospective" (click)="goToCreate()">+</button>
+  </div>
+  <div class="list-board">
+    <div class="board" *ngFor="let board of boards">
+      <div class="card-board" (click)="redirectTo(board)">
+        <div class="info-board">
+          <h3>{{ board.name }}</h3>
+          <p>{{ board.date }}</p>
+        </div>
+        <div class="btns">
+          <span
+            ngbTooltip="Deletar"
+            (click)="deleteBoard($event, board.id)"
+            id="delete"
+            class="material-icons"
+          >
+            delete_outline
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

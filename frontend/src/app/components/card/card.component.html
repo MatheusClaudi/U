@@ -1,0 +1,30 @@
+<div
+  class="card flex"
+  [style.background-color]="color"
+  (clickOutside)="closeEdition()"
+>
+  <p *ngIf="!enabledEdition">{{ card.text }}</p>
+
+  <input
+    *ngIf="enabledEdition"
+    [value]="card.text"
+    (keydown)="saveChanges($event)"
+    type="text"
+  />
+  <span
+    *ngIf="!enabledEdition"
+    class="material-icons"
+    (click)="displayMenu()"
+    (clickOutside)="closeMenu()"
+    >more_vert</span
+  >
+  <div *ngIf="showMenu" class="menu">
+    <button (click)="enableEdit($event)">Editar</button>
+    <button (click)="delete()">Excluir</button>
+  </div>
+  <tag-menu
+    [selected]="card.tags"
+    (onSelectTag)="addTag($event)"
+    (onDeleteTag)="removeTag($event)"
+  ></tag-menu>
+</div>

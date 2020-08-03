@@ -1,0 +1,112 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 400px;
+  height: 300px;
+  box-shadow: 0px 3px 15px #0000000F;
+  border-radius: 4px;
+  margin-top: 100px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-item{
+  flex: 1;
+}
+
+.form-group {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.comp-title {
+  text-align: center;
+  vertical-align: text-bottom;
+  margin-top: 45px;
+  font: bolder 21px/31px Montserrat;
+  letter-spacing: 0px;
+  color: #384364;
+  opacity: 1;
+}
+
+
+.label {
+  text-align: center;
+  font: bold 12px/31px Montserrat;
+  letter-spacing: 0px;
+  color: #384364;
+  opacity: 0.6;
+}
+
+.input {
+  display: block;
+  width: 90%;
+  height: 40px;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  background: #F5F4FC 0% 0% no-repeat padding-box;
+  border-radius: 20px;
+  opacity: 1;
+  border: transparent;
+}
+
+#btn-save-add {
+  width: 216px;
+  height: 46px;
+  margin-right: 20px;
+  text-align: center;
+  font: Bold 11px/11px Montserrat;
+  letter-spacing: 0.28px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  opacity: 1;
+  background: #0BB4D4 0% 0% no-repeat padding-box;
+  border-radius: 100px;
+  opacity: 1;
+  border: transparent;
+}
+
+.back-btn {
+  width: 140px;
+  height: 46px;
+
+  text-align: center;
+  font: Bold 11px/11px Montserrat;
+  letter-spacing: 0.28px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+
+  background: #878787 0% 0% no-repeat padding-box;
+  border-radius: 100px;
+  opacity: 1;
+  border: transparent;
+}
+
+.btns {
+  margin-left: 54px;
+  margin-right: 54px;
+  margin-bottom: 40px;
+}
+
+.release {
+  margin-top: 10px;
+}
+
+@media (max-width: 500px) {
+  .container{
+    width: 90%;
+  }
+
+}

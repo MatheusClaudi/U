@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+
+html, body {
+  max-height: 100vh;
+}
+body {
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.flex {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}

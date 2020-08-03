@@ -1,0 +1,9 @@
+<ng-multiselect-dropdown
+  [(ngModel)]="selected"
+  [placeholder]="'Filtrar por status'"
+  [settings]="dropdownSettings"
+  [data]="dropdownList"
+  (onSelect)="onItemSelect($event)"
+  (onDeSelect)="onItemDeselect($event)"
+>
+</ng-multiselect-dropdown>

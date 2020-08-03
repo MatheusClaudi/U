@@ -1,0 +1,79 @@
+
+.users-box {
+    padding: 0 0 1em 0;
+    width: 100%;
+    max-width: 100%;
+    height: 15em;
+    max-height: 15em;
+    border-style: solid;
+    border-radius: 2px;
+    border-color: #9598a0;
+    border-width: 0.5px;
+    background-color: #f5f4fc;
+  }
+
+  .users-list{
+    overflow-y: auto;
+    width: 100%;
+    max-width: 100%;
+    height: 12em;
+  }
+
+  .search-box {
+    display: flex;
+    flex-direction: row;
+    border-bottom: #9598a0;
+    border-bottom-style: solid;
+  }
+  
+  .search-input {
+    width: strech;
+    background-color: transparent;
+    border: transparent;
+    outline: none;
+  }
+  .c2{
+    background-color: #99ca80;
+    border-width: 0.5px;
+  }
+  
+  .search-icon {
+    height: 32px;
+    width: 32px;
+    margin-top: 3px;
+    margin-left: auto;
+    margin-right: 5px;
+    background-image: url("../../../assets/img/search-black-18dp.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: 0.5s;
+    opacity: 1;
+  }
+
+  .config-icon {
+    height: 32px;
+    width: 32px;
+    margin-top: 3px;
+    margin-right: 5px;
+    background-image: url("../../../assets/img/list-dropdown.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: 0.5s;
+    opacity: 1;
+  }
+
+  .dropdown-toggle::after {
+    display:none;
+  }
+  
+  .check-box {
+    height: 1em;
+    width: 1em;
+    margin: 3px 5px 0 0;
+  }
+  
+  .form-check {
+    display: flex;
+    flex-direction: row;
+  }
+

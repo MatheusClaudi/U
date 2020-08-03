@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="199.5" height="159" viewBox="0 0 199.5 159">
+  <g id="card" transform="translate(1 1)">
+    <g id="Retângulo_57" data-name="Retângulo 57" transform="translate(117.5 49)" fill="none" stroke="#79bbaa" stroke-linejoin="round" stroke-width="2">
+      <rect width="79" height="107" stroke="none"/>
+      <rect x="-1" y="-1" width="81" height="109" fill="none"/>
+    </g>
+    <rect id="Retângulo_56" data-name="Retângulo 56" width="79" height="107" fill="none" stroke="#9cb130" stroke-linecap="square" stroke-linejoin="bevel" stroke-width="2"/>
+    <text id="_13" data-name="13" transform="translate(25.5 66)" fill="#faeee1" font-size="36" font-family="GlacialIndifference, Glacial Indifference"><tspan x="0" y="0">13</tspan></text>
+    <text id="_20" data-name="20" transform="translate(136.5 120)" fill="#faeee1" font-size="36" font-family="GlacialIndifference, Glacial Indifference"><tspan x="0" y="0">20</tspan></text>
+  </g>
+</svg>

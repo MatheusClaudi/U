@@ -1,0 +1,47 @@
+<section class="board" *ngIf="board">
+  <div class="header-info">
+    <div class="retro-info">
+      <div class="info">
+        <h4>SPRINT RETROSPECTIVE</h4>
+        <h2>{{ board.name }}</h2>
+
+        <h4>Sprint</h4>
+        <h2 *ngIf="board.sprint">{{ board.sprint.name }}</h2>
+        <h2 *ngIf="!board.sprint">Indefinida</h2>
+      </div>
+      <div class="qr-code">
+        <ngx-qrcode
+          [title]="title"
+          [elementType]="elementType"
+          value="http://localhost:4200/retrospective/{{ board.id }}"
+          cssClass="aclass"
+          errorCorrectionLevel="L"
+        >
+        </ngx-qrcode>
+      </div>
+    </div>
+  </div>
+  <div class="invite">
+    <p>Convidar Desenvolvedor ( a )</p>
+    <div class="link">
+      <p>http://localhost:4200/retrospective/{{ board.id }}</p>
+    </div>
+  </div>
+
+  <div class="lists">
+    <div *ngFor="let list of board.lists; let i = index" class="card-list">
+      <p>{{ list.name }}</p>
+      <button (click)="addNewCard(i)">
+        <span>+</span>
+      </button>
+      <card
+        *ngFor="let card of list.cards"
+        [listID]="list.id"
+        [data]="card"
+        [cardColor]="colors[i]"
+        (update)="updateCard($event)"
+        (delete)="deleteCard($event, i)"
+      ></card>
+    </div>
+  </div>
+</section>

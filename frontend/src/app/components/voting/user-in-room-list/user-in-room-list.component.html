@@ -1,0 +1,19 @@
+<div>
+    <div class="list-players-bar" >
+        <p class="text">Players:</p>
+        <p class="time" >00:00:00</p>
+    </div>
+    <div *ngFor="let voter of votersList">
+        <div class="voter-info">
+            <div class="player-icon"></div>
+            <div class="info">
+                <p class="name"> {{voter.name}} </p>
+                <a class="time">00:00:00</a>
+            </div>
+
+                <span *ngIf="inVotation && hasUserStory &&voter.voted" class="confirm-icon"></span>
+
+                <p *ngIf="!inVotation && hasUserStory && voter.voted" class="vote" > {{voter.vote}} </p>
+        </div>
+    </div>
+</div>

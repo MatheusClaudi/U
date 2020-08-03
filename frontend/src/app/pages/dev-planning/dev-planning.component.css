@@ -1,0 +1,117 @@
+.dev-container{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 100%;
+}
+
+.poker-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 48%;
+    max-width: 48%;  
+}
+
+.status{
+    display: flex;
+    flex: row;
+    width: 100%;
+    justify-content: center;
+}
+
+.circular-button{
+    border-radius: 20px;
+    border: none;
+    opacity: 1;
+    background: #3277DB 0% 0% no-repeat padding-box;
+    width: 20%;
+    height: 35px;
+    text-align: center;
+    font: 13px/15px Montserrat;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+
+.result{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 15%;
+    margin-right: 15%;
+    width: 70%;
+    border: 1px solid #384364;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.result .message{
+    text-align: justify;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+
+.result .input{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.box{
+    max-width: 50%;
+    width: 50%;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    border: 1px solid #384364;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+  
+.box-text{
+    margin: 10px;
+    font: Medium 13px/18px Montserrat;
+    color: #384364;
+}
+
+
+
+.title{
+    font: Medium 13px/18px Montserrat;
+    color: #384364;
+}
+
+
+.break-text{
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+  
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+
+  @media screen and (max-width: 1050px){
+    .poker-container {
+        max-width: 100%;
+        width: 100%;
+    }
+}

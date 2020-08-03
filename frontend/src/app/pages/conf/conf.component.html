@@ -1,0 +1,35 @@
+<div class="conteiner">
+  <span class="comp-sub-hdr"> Sprint planning • </span>
+  <h3 class="comp-title" >Configuração de planejamento</h3>
+
+  <h6 class="comp-lbl"> Tipo de cartas </h6>
+
+  <div class="btn-group mr-3">
+    <button type="button" class="dropdown-button">{{ cardsType }}</button>
+    <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+      <button class="dropdown-button-arrow dropdown-toggle-split" ngbDropdownToggle></button>
+      <div class="dropdown-menu" ngbDropdownMenu>
+        <button ngbDropdownItem (click)="setCardsType('Scrum')">Scrum</button>
+        <button ngbDropdownItem (click)="setCardsType('Outro')">Outro</button>
+      </div>
+    </div>
+  </div>
+  <div class="alert-box" role="alert">
+    Customizar cartas e valores
+  </div>
+  <div class="col-md-20">
+    <div id="cards" class="row">
+      <div class="form-check form-check-inline" class="col-sm-2"
+      *ngFor="let control of planningConfigFormArray.controls; index as i" >
+        <input [formControl]="planningConfigFormArray.controls[i]" type="checkbox"/>
+        <label class="chk-box-lbl" for="inlineCheckbox1">{{cards[i]}}</label>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <div class="action-btns">
+    <button class="accept-btn" (click)="configPlanning()">Próximo</button>
+    <button class="back-btn" (click)="goBack()">Voltar</button>
+  </div>
+</div>

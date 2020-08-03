@@ -1,0 +1,158 @@
+.conteiner {
+    display: block;
+    margin-top: 35px;
+    margin-left: 29px;
+    /* max-width: 920px; */
+}
+
+.comp-sub-hdr {
+    width: 112px;
+    height: 44px;
+    margin-top: 35px;
+    text-align: left;
+    font: Bold 10px/31px Montserrat;
+    letter-spacing: 1px;
+    color: #384364;
+    text-transform: uppercase;
+    opacity: 0.4;
+}
+
+.group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+.comp-title {
+    font: bold 21px/31px Montserrat;
+    margin-bottom: 20px;
+}
+
+
+.column {
+    width: 40%;
+    margin: 0 3% 0 3%;
+}
+
+label {
+    text-align: left;
+    font: bold 12px/31px Montserrat;
+    letter-spacing: 0px;
+    color: #384364;
+    opacity: 0.6;
+    margin-top: 15px;
+  }
+
+
+  .dp-group {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .dp-column {
+    width: auto;
+    margin: 0 0 0 5%;
+  }
+  
+  .dp-input-group {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  
+  .dp-label {
+    margin-top: 0;
+  }
+  
+  .date-picker {
+    display: block;
+    width: 125px;
+    height: 40px;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    background: #f5f4fc 0% 0% no-repeat padding-box;
+    border-radius: 2px;
+    opacity: 1;
+    border: transparent;
+  }
+  
+  .btn-calendar {
+    display: inline-block;
+    border-color: transparent;
+    background-color: #f5f4fc;
+    margin: 0 0 0 1px;
+    outline: none;
+  }
+
+  .btn-save-feedback {
+    width: 100%;
+    max-width: 380px;
+    margin-top: 40px;
+    height: 46px;
+    text-align: center;
+    font: Bold 11px/11px Montserrat;
+    letter-spacing: 0.28px;
+    color: #ffffff;
+    text-transform: uppercase;
+    opacity: 1;
+    background: #0bb4d4 0% 0% no-repeat padding-box;
+    border-radius: 100px;
+    opacity: 1;
+    border: transparent;
+  }
+  
+  .confirm{
+    width: 100%;
+    text-align: center;
+  }
+    
+
+@media (max-width: 1200px) {
+    .conteiner {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+  
+  @media (max-width: 1000px) {
+    .conteiner {
+      margin-left: 7px;
+      margin-right: 7px;
+    }
+  
+    .column {
+      width: 100%;
+    }
+  
+    .date-picker {
+      width: 90%;
+    }
+  
+    .meetings-box {
+      height: fit-content;
+    }
+  
+    .top-label {
+      margin-top: 15px;
+    }
+  }
+  
+  @media (max-width: 450px) {
+    .dp-group {
+      display: flex;
+      flex-direction: column;
+      margin: 0 0 10% 0;
+    }
+  
+    .dp-column {
+      max-width: 100%;
+      margin: 0 5% 0 5%;
+    }
+  
+    .date-picker {
+      max-width: 65%;
+    }
+  }
+  

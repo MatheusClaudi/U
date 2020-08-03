@@ -1,0 +1,30 @@
+<section class="container flex-wrap center">
+  <div *ngFor="let card of cards">
+    <div class="outline" [ngClass]="{'extern': !isClicked(card.label), 'extern-clicked': isClicked(card.label)}" (click)="vote(card.label)">
+      <div class="top">
+        <div *ngIf="card.label != 'Coffee'"> {{card.label}} </div>
+        <div class="text" *ngIf="card.label == 'Coffee'">
+          <img src="../../../../assets/img/cofee.png" width="12" height="9">
+        </div>
+      </div>
+
+      <div class="intern-container">
+        <div [ngClass]="{'intern': !isClicked(card.label), 'intern-clicked': isClicked(card.label)}">
+          <div class="text" *ngIf="card.label != 'Coffee'">
+            {{card.label}}
+          </div>
+          <div class="text" *ngIf="card.label == 'Coffee'">
+            <img src="../../../../assets/img/cofee.png" width="40" height="31">
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom">
+        <div *ngIf="card.label != 'Coffee'"> {{card.label}} </div>
+        <div class="text" *ngIf="card.label == 'Coffee'">
+          <img src="../../../../assets/img/cofee.png" width="12" height="9">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
